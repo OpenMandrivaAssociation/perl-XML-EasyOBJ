@@ -1,6 +1,6 @@
 %define module 	XML-EasyOBJ
 %define version 1.12
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
@@ -16,7 +16,6 @@ BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 BuildArch:	noarch
 Url:		http://search.cpan.org/dist/%{module}
 
-
 %description
 %{module} - Easy XML object navigation
 
@@ -26,7 +25,6 @@ Url:		http://search.cpan.org/dist/%{module}
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} 
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
