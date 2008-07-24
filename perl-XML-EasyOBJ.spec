@@ -1,6 +1,6 @@
 %define module 	XML-EasyOBJ
 %define version 1.12
-%define release %mkrel 5
+%define release %mkrel 7
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
