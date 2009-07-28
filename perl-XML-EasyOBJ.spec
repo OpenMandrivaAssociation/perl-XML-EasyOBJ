@@ -1,26 +1,26 @@
-%define module 	XML-EasyOBJ
-%define version 1.12
-%define release %mkrel 8
+%define upstream_name 	 XML-EasyOBJ
+%define upstream_version 1.12
 
-Summary:	%{module} perl module
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release: 	%mkrel 1
+
+Summary:	%{upstream_name} perl module
+License: 	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{module}-%{version}.tar.bz2
-Requires:	perl-XML-Parser 
-Requires:       perl-XML-XSLT 
-BuildRequires:	perl-devel >= 5.8.0
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
-BuildArch:	noarch
-Url:		http://search.cpan.org/dist/%{module}
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Requires:  perl-XML-Parser 
+Requires:  perl-XML-XSLT 
 
 %description
-%{module} - Easy XML object navigation
+%{upstream_name} - Easy XML object navigation
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} 
@@ -38,5 +38,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README Changes
 %{_mandir}/*/*
 %{perl_vendorlib}/XML/*
-
-
