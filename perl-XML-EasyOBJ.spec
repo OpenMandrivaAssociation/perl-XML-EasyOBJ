@@ -2,7 +2,7 @@
 %define upstream_version 1.12
 Name:		perl-%{upstream_name}
 Version:	1.12
-Release:	1
+Release:	2
 
 Summary:	%{upstream_name} perl module
 License:	GPL+ or Artistic
@@ -20,7 +20,7 @@ Requires:	perl(XML::XSLT)
 %{upstream_name} - Easy XML object navigation
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n XML-EasyOBJ-1.12
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} 
