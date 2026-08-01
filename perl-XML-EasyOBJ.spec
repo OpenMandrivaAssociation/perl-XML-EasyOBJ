@@ -2,7 +2,7 @@
 %define upstream_version 1.12
 Name:		perl-%{upstream_name}
 Version:	1.12
-Release:	2
+Release:	3
 
 Summary:	%{upstream_name} perl module
 License:	GPL+ or Artistic
@@ -28,6 +28,9 @@ make
 
 %install
 make PREFIX=%{buildroot}%{_prefix} install
+
+%check
+make test || :
 
 %files
 %doc README Changes
